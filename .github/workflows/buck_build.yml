@@ -10,4 +10,7 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: 15
-    - run: buck build :result
+    - name: Install buck from oficial github (release 2022.05.05.01)
+      run: wget https://github.com/facebook/buck/releases/download/v2022.05.05.01/buck.2022.05.05.01_all.deb -O buck.deb; dpkg --install buck.deb
+    - name: Build our programm
+      run: buck build :result
