@@ -18,7 +18,6 @@ python_library(
 
 python_binary(
     name='result',
-    platform='py3',
     main_module='main',
     deps=[
         ':main.lib',
