@@ -20,3 +20,8 @@ jobs:
           && sudo dpkg --install buck.deb
     - name: Build our programm
       run: buck build :result
+    - name: Store result
+      uses: actions/upload-artifact@v3
+      with:
+        name: mylittleprogramm
+        path: ./buck-out/gen/result.pex
