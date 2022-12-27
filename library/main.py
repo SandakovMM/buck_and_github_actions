@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Implementation staff"""
 
 def say_hello():
-    print(f'Hello world!')
+    """Just hello world function"""
+    print('Hello world!')
