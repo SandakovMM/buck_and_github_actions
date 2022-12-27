@@ -1,4 +1,3 @@
-# Copyright 1999-2022. Plesk International GmbH. All rights reserved.
 # vim:ft=python:
 
 python_library(
