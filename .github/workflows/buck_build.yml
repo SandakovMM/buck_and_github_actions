@@ -7,19 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-java@v1
+    - name: Build our program
+      id: build
+      uses: SandakovMM/build-with-buck@v1
       with:
-        java-version: 8
-    - uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
-    - name: Install buck from oficial github (release 2022.05.05.01)
-      run: >
-          wget https://github.com/facebook/buck/releases/download/v2022.05.05.01/buck.2022.05.05.01_all.deb -O buck.deb
-          && sudo apt-get install openjdk-8-jre-headless
-          && sudo dpkg --install buck.deb
-    - name: Build our programm
-      run: buck build :result
+        command: build
+        target: :result
     - name: Store result
       uses: actions/upload-artifact@v3
       with:
