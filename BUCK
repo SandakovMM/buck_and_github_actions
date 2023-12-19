@@ -1,5 +1,11 @@
 # vim:ft=python:
 
+genrule(
+    name = 'version',
+    out = 'version.json',
+    bash = r"""echo "{\"revision\": \"`git rev-parse HEAD`\"}" > $OUT""",
+)
+
 python_library(
     name='library.lib',
     srcs=[
@@ -13,6 +19,9 @@ python_library(
     srcs=['main.py'],
     deps=[
         ':library.lib',
+    ],
+    resources = [
+        ':version',
     ],
 )
 
