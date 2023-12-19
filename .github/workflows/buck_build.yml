@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build our program
       id: build
-      uses: SandakovMM/build-with-buck@v2
+      uses: SandakovMM/build-with-buck@v3
       with:
         command: build
         target: :result
